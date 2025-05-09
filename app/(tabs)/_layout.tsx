@@ -8,6 +8,7 @@ import {
   ImageSourcePropType,
   StyleSheet,
   Text,
+  View,
 } from "react-native";
 
 const TabIcon = ({
@@ -19,16 +20,20 @@ const TabIcon = ({
   icon: ImageSourcePropType;
   focused: boolean;
 }) => {
-  return (
+  return focused ? (
     <ImageBackground
       source={focused ? images.highlight : ""}
-      className="flex flex-row w-full flex-1 min-w-[90px] min-h-14 mt-2 justify-center items-center rounded-full overflow-hidden px4"
+      className="flex flex-row w-full flex-1 min-w-[90px] min-h-14 mt-6 justify-center items-center rounded-full overflow-hidden px4"
     >
       <Image source={icon} tintColor={"#151312"} className="size-5" />
       <Text className="text-secondary text-base font-semibold ml-2">
-        {title}{" "}
+        {title}
       </Text>
     </ImageBackground>
+  ) : (
+    <View className="size-full flex flex-col mt-6 text-xs justify-center items-center rounded full">
+      <Image source={icon} tintColor={"#151312"} className="size-5" />
+    </View>
   );
 };
 
