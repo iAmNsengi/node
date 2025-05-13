@@ -1,18 +1,14 @@
-import { StyleSheet, Text, View } from 'react-native'
-import React from 'react'
+import React from "react";
+import { StyleSheet, Text, View } from "react-native";
 
-const Search
- = () => {
+const Search = () => {
   return (
     <View>
-      <Text>Search
-        
-      </Text>
+      <Text>Search</Text>
     </View>
-  )
-}
+  );
+};
 
-export default Search
+export default Search;
 
-
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({});
