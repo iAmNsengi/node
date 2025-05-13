@@ -49,7 +49,7 @@ const _Layout = () => {
         tabBarStyle: {
           backgroundColor: "#0f0D23",
           // borderRadius: 50,
-          // marginHorizontal: 20,
+          // marginHorizontal: 20,s
           // marginBottom: 36,
           // height: 52,
           // position: "absolute",
@@ -64,6 +64,16 @@ const _Layout = () => {
           headerShown: false,
           tabBarIcon: ({ focused }) => (
             <TabIcon title="Home" icon={icons.home} focused={focused} />
+          ),
+        }}
+      />{" "}
+      <Tabs.Screen
+        name="search"
+        options={{
+          title: "",
+          headerShown: false,
+          tabBarIcon: ({ focused }) => (
+            <TabIcon focused={focused} icon={icons.search} title="Search" />
           ),
         }}
       />
@@ -84,16 +94,6 @@ const _Layout = () => {
           headerShown: false,
           tabBarIcon: ({ focused }) => (
             <TabIcon icon={icons.person} focused={focused} title="Profile" />
-          ),
-        }}
-      />
-      <Tabs.Screen
-        name="search"
-        options={{
-          title: "",
-          headerShown: false,
-          tabBarIcon: ({ focused }) => (
-            <TabIcon focused={focused} icon={icons.search} title="Search" />
           ),
         }}
       />
