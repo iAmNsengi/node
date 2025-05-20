@@ -33,7 +33,7 @@ export const updateSearchCount = async (query: string, movie: Movie) => {
       });
     }
   } catch (error) {
-    console.log((error as any).message);
+    console.log(error);
     throw error;
   }
 };
