@@ -8,19 +8,19 @@ const TrendingCard = ({ movie, index }: TrendingCardProps) => {
   return (
     <Link
       href={`/movies/${movie.movie_id}`}
-      asChild
       className="flex mx-4"
       key={movie.movie_id}
+      asChild
     >
-      <View>
-        <TouchableOpacity className="w-40">
-          <Image
-            source={{ uri: movie.poster_url }}
-            className="w-32 h-40 rounded-lg"
-            resizeMode="cover"
-          />
-          <Text className="text-white text-sm">{movie.title}</Text>
-        </TouchableOpacity>
+      <TouchableOpacity className="w-40">
+        <Image
+          source={{ uri: movie.poster_url }}
+          className="w-32 h-40 rounded-lg"
+          resizeMode="cover"
+        />
+        <Text className="text-white text-sm" numberOfLines={1}>
+          {movie.title}
+        </Text>
         <View className="absolute bottom-9 -left-2">
           <MaskedView
             maskElement={
@@ -30,7 +30,7 @@ const TrendingCard = ({ movie, index }: TrendingCardProps) => {
             <Image source={images.rankingGradient} className="size-14" />
           </MaskedView>
         </View>
-      </View>
+      </TouchableOpacity>
     </Link>
   );
 };
