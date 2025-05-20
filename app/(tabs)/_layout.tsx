@@ -6,6 +6,7 @@ import {
   Image,
   ImageBackground,
   ImageSourcePropType,
+  StatusBar,
   StyleSheet,
   Text,
   View,
@@ -37,67 +38,70 @@ const TabIcon = ({
 
 const _Layout = () => {
   return (
-    <Tabs
-      screenOptions={{
-        tabBarShowLabel: false,
-        tabBarItemStyle: {
-          width: "100%",
-          height: "100%",
-          justifyContent: "center",
-          alignItems: "center",
-        },
-        tabBarStyle: {
-          backgroundColor: "#0f0D23",
-          // borderRadius: 50,
-          // marginHorizontal: 20,s
-          // marginBottom: 36,
-          // height: 52,
-          // position: "absolute",
-          // borderWidth: 1,
-        },
-      }}
-    >
-      <Tabs.Screen
-        name="index"
-        options={{
-          title: "",
-          headerShown: false,
-          tabBarIcon: ({ focused }) => (
-            <TabIcon title="Home" icon={icons.home} focused={focused} />
-          ),
+    <>
+      <StatusBar hidden={true} />
+      <Tabs
+        screenOptions={{
+          tabBarShowLabel: false,
+          tabBarItemStyle: {
+            width: "100%",
+            height: "100%",
+            justifyContent: "center",
+            alignItems: "center",
+          },
+          tabBarStyle: {
+            backgroundColor: "#0f0D23",
+            // borderRadius: 50,
+            // marginHorizontal: 20,s
+            // marginBottom: 36,
+            // height: 52,
+            // position: "absolute",
+            // borderWidth: 1,
+          },
         }}
-      />{" "}
-      <Tabs.Screen
-        name="search"
-        options={{
-          title: "",
-          headerShown: false,
-          tabBarIcon: ({ focused }) => (
-            <TabIcon focused={focused} icon={icons.search} title="Search" />
-          ),
-        }}
-      />
-      <Tabs.Screen
-        name="saved"
-        options={{
-          title: "",
-          headerShown: false,
-          tabBarIcon: ({ focused }) => (
-            <TabIcon icon={icons.save} focused={focused} title="Saved" />
-          ),
-        }}
-      />
-      <Tabs.Screen
-        name="profile"
-        options={{
-          title: "",
-          headerShown: false,
-          tabBarIcon: ({ focused }) => (
-            <TabIcon icon={icons.person} focused={focused} title="Profile" />
-          ),
-        }}
-      />
-    </Tabs>
+      >
+        <Tabs.Screen
+          name="index"
+          options={{
+            title: "",
+            headerShown: false,
+            tabBarIcon: ({ focused }) => (
+              <TabIcon title="Home" icon={icons.home} focused={focused} />
+            ),
+          }}
+        />{" "}
+        <Tabs.Screen
+          name="search"
+          options={{
+            title: "",
+            headerShown: false,
+            tabBarIcon: ({ focused }) => (
+              <TabIcon focused={focused} icon={icons.search} title="Search" />
+            ),
+          }}
+        />
+        <Tabs.Screen
+          name="saved"
+          options={{
+            title: "",
+            headerShown: false,
+            tabBarIcon: ({ focused }) => (
+              <TabIcon icon={icons.save} focused={focused} title="Saved" />
+            ),
+          }}
+        />
+        <Tabs.Screen
+          name="profile"
+          options={{
+            title: "",
+            headerShown: false,
+            tabBarIcon: ({ focused }) => (
+              <TabIcon icon={icons.person} focused={focused} title="Profile" />
+            ),
+          }}
+        />
+      </Tabs>
+    </>
   );
 };
 
